@@ -1,18 +1,10 @@
 import telebot
 from telebot import types
-from bs4 import BeautifulSoup as b
-import requests
 
 #Запуск бота
 
 # 5860392992:AAG-ePrvCUDtb6ZL6bJAUVMVx04l5hXofs4
 bot = telebot.TeleBot("5860392992:AAG-ePrvCUDtb6ZL6bJAUVMVx04l5hXofs4")
-URL = 'https://bms.it-tv.org/stat/index.php?p=message'
-r = requests.get(URL)
-soup = b(r.text, 'html parser')
-news = soup.find_all('span', style_='#text')
-print(news)
-
 
 
 @bot.message_handler(commands=['start'])
